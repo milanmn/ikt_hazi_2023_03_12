@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pitagorasz</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
+    h1{
+        font-family: 'Rubik Iso', cursive;
+    }
+</style>
+
+<body>
+    <h1 class="font1">Pitagorasz tétel</h1>
+    <img src="images/kep.png" alt="">
+    <form>
+        <p>
+            A oldal hossza: <input type="number" id="a">
+            <br>
+            B oldal hossza: <input type="number" id="b">
+            <br>
+            C oldal hossza: <input type="number" id="c">
+            <br>
+            <button type="button" onclick="calculate()">Számolás</button>
+            <button type="reset">Törlés</button>
+        </p>
+        <p>
+            Az eredmény: <span id="result"></span>
+        </p>
+    </form>
+
+    <script>
+        function calculate() {
+            // Az A, B és C oldal hossza
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+            if (isNaN(a)  isNaN(b)) {
+                if (isNaN(b)  isNaN(c)) {
+                    if (isNaN(a) || isNaN(c)) {
+                        document.getElementById("result").innerHTML = "Kérem adjon meg legalább két oldalt!";
+                        return;
+                    } else {
+                        a = parseFloat(document.getElementById("a").value);
+                        c = parseFloat(document.getElementById("c").value);
+                        b = Math.sqrt(cc - aa);
+                    }
+                } else {
+                    b = parseFloat(document.getElementById("b").value);
+                    c = parseFloat(document.getElementById("c").value);
+                    a = Math.sqrt(cc - bb);
+                }
+            } else {
+                c = Math.sqrt(aa + bb);
+            }
+            document.getElementById("result").innerHTML = "C oldal hossza: " + c.toFixed(2) + ", A oldal hossza: " + a.toFixed(2) + ", B oldal hossza: " + b.toFixed(2);
+        }
+    </script>
+</body>
+</html>
